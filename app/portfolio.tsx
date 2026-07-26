@@ -927,7 +927,7 @@ function AcademicPageContent() {
 
         <section className="academic-stats">
           {[
-            ["06", "CORE PUBLICATIONS", "本人核心论文 · 均已见刊"],
+            ["06", "CORE PUBLICATIONS", "本人高质量论文 · 均已见刊"],
             ["05", "JCR Q1 JOURNAL WORKS", "JCR Q1 期刊论文"],
             ["04", "MENTORED PUBLICATIONS", "指导低年级学生合作发表"],
             ["04", "PROJECT PROPOSALS", "国社科 / 省部级 / 教改"],
