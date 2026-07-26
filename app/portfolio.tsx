@@ -585,10 +585,10 @@ function HeroOrbit() {
       <div className="orbit-ring orbit-ring-c" />
       <div className="portrait-shell">
         <img
-          src="/assets/profile/haoyu-zhang-v2.webp"
-          alt="张浩宇证件照"
-          width="672"
-          height="696"
+          src="/assets/profile/haoyu-lifestyle-beijing.jpg"
+          alt="张浩宇生活照"
+          width="1536"
+          height="2048"
         />
         <span className="portrait-scan" />
       </div>

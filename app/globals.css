@@ -527,8 +527,8 @@ a:hover .arrow {
 }
 
 .portrait-shell {
-  width: 36%;
-  aspect-ratio: 0.74;
+  width: 62%;
+  aspect-ratio: 4 / 5;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -563,6 +563,11 @@ a:hover .arrow {
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.3));
+}
+
+.portrait-shell img {
+  object-fit: cover;
+  object-position: 68% center;
 }
 
 .portrait-scan {
@@ -4139,7 +4144,7 @@ a:hover .arrow {
 
 @media (max-width: 720px) {
   .portrait-shell {
-    width: 38%;
+    width: 64%;
   }
 
   .project-title-block h1 {
