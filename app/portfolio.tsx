@@ -711,7 +711,6 @@ function HomePage() {
                 更展示<span>如何完成研究。</span>
               </>
             }
-            text="网站的信息顺序围绕博士申请评审逻辑展开：明确的研究议程、稳定的实证能力、完整的实现能力，以及跨场景转化潜力。"
           />
           <div className="evidence-grid">
             {evidence.map((item, index) => (
@@ -963,7 +962,6 @@ function AcademicPageContent() {
                   而是<span>可复核的研究记录。</span>
                 </>
               }
-              text="六项成果形成从儿童行为训练、心理调节、情绪支持，到人体数据驱动设计的连续研究轨迹。"
             />
             <div className="publication-list">
               {publications.map((paper) => (
