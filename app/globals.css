@@ -527,21 +527,17 @@ a:hover .arrow {
 }
 
 .portrait-shell {
-  width: 62%;
+  width: 70%;
   aspect-ratio: 4 / 5;
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 2;
   transform: translate(-50%, -50%);
-  border: 1px solid rgba(113, 168, 255, 0.56);
-  background:
-    radial-gradient(circle at 50% 32%, rgba(86, 154, 255, 0.34), transparent 38%),
-    linear-gradient(155deg, #142c4e 0%, #091524 54%, #050b14 100%);
+  border: 0;
+  background: transparent;
   overflow: hidden;
-  box-shadow:
-    0 0 0 8px rgba(47, 125, 255, 0.05),
-    0 24px 70px rgba(0, 0, 0, 0.42);
+  box-shadow: none;
 }
 
 .portrait-shell::before,
@@ -567,7 +563,12 @@ a:hover .arrow {
 
 .portrait-shell img {
   object-fit: cover;
-  object-position: 68% center;
+  object-position: center top;
+  filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.42));
+}
+
+.portrait-shell::before {
+  display: none;
 }
 
 .portrait-scan {
@@ -4144,7 +4145,7 @@ a:hover .arrow {
 
 @media (max-width: 720px) {
   .portrait-shell {
-    width: 64%;
+    width: 74%;
   }
 
   .project-title-block h1 {

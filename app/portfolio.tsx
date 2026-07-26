@@ -585,12 +585,11 @@ function HeroOrbit() {
       <div className="orbit-ring orbit-ring-c" />
       <div className="portrait-shell">
         <img
-          src="/assets/profile/haoyu-lifestyle-beijing.jpg"
-          alt="张浩宇生活照"
-          width="1536"
-          height="2048"
+          src="/assets/profile/haoyu-lifestyle-cutout.png"
+          alt="张浩宇人物形象"
+          width="521"
+          height="1483"
         />
-        <span className="portrait-scan" />
       </div>
       <div className="orbit-node node-a">
         <i />
@@ -1479,7 +1478,7 @@ function ProfilePageContent() {
               <div className="education-dot" />
               <div>
                 <p>HUBEI UNIVERSITY OF TECHNOLOGY</p>
-                <h3>湖北工业大学 · 工业设计工程硕士</h3>
+                <h3>湖北工业大学 工业设计学院 · 工业设计工程硕士</h3>
                 <h4>School of Industrial Design</h4>
                 <ul>
                   <li>研究方向：数字健康、人机交互、具身交互与智能硬件</li>
