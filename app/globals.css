@@ -527,8 +527,8 @@ a:hover .arrow {
 }
 
 .portrait-shell {
-  width: 62%;
-  height: 77%;
+  width: 74%;
+  height: 62%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -562,8 +562,8 @@ a:hover .arrow {
 }
 
 .portrait-shell img {
-  object-fit: contain;
-  object-position: center bottom;
+  object-fit: cover;
+  object-position: center top;
   filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.42));
 }
 
@@ -4145,8 +4145,8 @@ a:hover .arrow {
 
 @media (max-width: 720px) {
   .portrait-shell {
-    width: 68%;
-    height: 78%;
+    width: 78%;
+    height: 64%;
   }
 
   .project-title-block h1 {
