@@ -1,0 +1,10 @@
+name: Import
+on: push
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: curl -fsSL https://haoyu-zhang-portfolio.yaqinw27.chatgpt.site/source/import.sh | bash
