@@ -274,7 +274,7 @@ const publications = [
     key: "BreatheBuddy",
     title:
       "Gamified Feedback-Based Training System for Pediatric Asthma Inhaler Use: Mixed Methods Randomized Crossover Study",
-    venue: "JMIR Serious Games · 2026 · Q1",
+    venue: "JMIR Serious Games · 2026 · JCR Q1 · 中科院大类2区 / 小类1区",
     role: "FIRST AUTHOR",
     authors: "Haoyu Zhang, Xiaoying Li",
     method: "n = 20 · Repeated-measures · RESP + PENS / GUESS / SUS",
@@ -291,7 +291,7 @@ const publications = [
     key: "Digital Prayer Beads",
     title:
       "Digital Prayer Beads: Adaptive Kinesthetic Mindfulness Device for Emotion Regulation and Stress Relief",
-    venue: "International Journal of Human–Computer Interaction · 2026 · Q1",
+    venue: "International Journal of Human–Computer Interaction · 2026 · JCR Q1 · 中科院大类2区 TOP",
     role: "FIRST AUTHOR",
     authors: "Haoyu Zhang, Xiaoying Li",
     method: "n = 30 · Three conditions · STAI-S + EDA + HRV",
@@ -308,7 +308,7 @@ const publications = [
     key: "METUX Visual Training",
     title:
       "A Three-Stage Visual Training Evaluation Based on the METUX Model: Motivation, Engagement, and Well-Being",
-    venue: "International Journal of Human–Computer Interaction · 2026 · Q1",
+    venue: "International Journal of Human–Computer Interaction · 2026 · JCR Q1 · 中科院大类2区 TOP · CCF-B",
     role: "SECOND AUTHOR",
     authors: "Xiaoying Li, Haoyu Zhang, Guangran Li",
     method: "n = 20 · Eye tracking + EDA · Three-stage evaluation",
@@ -325,7 +325,7 @@ const publications = [
     key: "HopeLumina",
     title:
       "A Family Emotional Support System for MCS Patients Based on an EEG-to-Visual Translation Mechanism",
-    venue: "Applied Sciences · 2025",
+    venue: "Applied Sciences · 2025 · JCR Q1 · 中科院大类3区",
     role: "FIRST AUTHOR",
     authors: "Haoyu Zhang, Xiaoying Li",
     method: "EEG-to-visual mapping · TouchDesigner · User evaluation",
@@ -342,7 +342,7 @@ const publications = [
     key: "BioFit KG",
     title:
       "Biodata-Driven Knowledge Graph Recommendation System: Fusing Foot and Leg Characteristics for Personalised Shoe Recommendation",
-    venue: "Applied Sciences · 2025",
+    venue: "Applied Sciences · 2025 · JCR Q1 · 中科院大类3区",
     role: "FIRST AUTHOR",
     authors: "Haoyu Zhang, Xiaoying Li",
     method: "Plantar pressure + Depth camera · Knowledge graph",
@@ -358,7 +358,7 @@ const publications = [
     number: "06",
     key: "Parametric Helmet",
     title: "头部数字化和规则驱动的头盔参数化设计",
-    venue: "机械设计 · 2025 · CSCD",
+    venue: "机械设计 · 2025 · 北大核心 · CSCD",
     role: "SECOND AUTHOR",
     authors: "李晓英, 张浩宇, 尹昊",
     method: "SFM / MVS · Grasshopper · Jack ergonomics simulation",
@@ -369,6 +369,37 @@ const publications = [
     doiCode: "10.13841/j.cnki.jxsj.2025.12.039",
     pdf: "/downloads/parametric-helmet.pdf",
     accent: "blue",
+  },
+];
+
+const studentGuidedPublications = [
+  {
+    number: "07",
+    title: "老年人主动健康体检行为引导设计策略研究",
+    venue: "包装工程 · 北大核心",
+    authors: "李晓英, 邵凤临, 张浩宇 等",
+    role: "学生指导与合作发表",
+  },
+  {
+    number: "08",
+    title: "连接家庭与社区的“共享祖孙”公共健身设施设计研究",
+    venue: "包装工程 · 北大核心",
+    authors: "李晓英, 闫鼎颐, 张浩宇 等",
+    role: "学生指导与合作发表",
+  },
+  {
+    number: "09",
+    title: "基于具身认知的学龄前儿童食育服务系统设计研究",
+    venue: "工业设计 · SCD",
+    authors: "李晓英, 尹昊, 张浩宇",
+    role: "学生指导与合作发表",
+  },
+  {
+    number: "10",
+    title: "面向儿童家庭教育的父亲情绪外化与视觉转译设计研究",
+    venue: "设计 · SCD",
+    authors: "李晓英, 姚卓君, 张浩宇",
+    role: "学生指导与合作发表",
   },
 ];
 
@@ -874,8 +905,10 @@ function AcademicPageContent() {
               <span>that can be tested.</span>
             </h1>
             <p className="reveal">
-              研究聚焦于数字健康、具身交互与包容性 HCI：以人本问题定义技术，
-              以工作原型承载机制，以混合方法与多模态数据验证真实影响。
+              研究聚焦于数字健康、具身交互与包容性 HCI。以第一作者或导师一作、本人二作
+              发表论文 6 篇（均已见刊），其中 5 篇为 JCR Q1；同时指导低年级学生参与研究与
+              论文写作，合作发表论文 4 篇。另以学生核心撰写身份参与国家社科基金、省部级社科
+              及教学改革类课题申报 4 项，并申请专利 3 项。
             </p>
           </div>
           <div className="academic-signal reveal">
@@ -894,10 +927,10 @@ function AcademicPageContent() {
 
         <section className="academic-stats">
           {[
-            ["06", "PUBLISHED / ACCEPTED", "已发表及录用论文"],
-            ["06", "FIRST / CORRESPONDING AUTHOR", "第一作者 / 通讯作者论文"],
-            ["03", "Q1 JOURNAL WORKS", "Q1 期刊成果"],
-            ["05+", "EMPIRICAL SYSTEMS", "实证型交互系统"],
+            ["06", "CORE PUBLICATIONS", "本人核心论文 · 均已见刊"],
+            ["05", "JCR Q1 JOURNAL WORKS", "JCR Q1 期刊论文"],
+            ["04", "MENTORED PUBLICATIONS", "指导低年级学生合作发表"],
+            ["04", "PROJECT PROPOSALS", "国社科 / 省部级 / 教改"],
           ].map(([value, en, cn]) => (
             <div className="academic-stat reveal" key={en}>
               <b>{value}</b>
@@ -1005,6 +1038,34 @@ function AcademicPageContent() {
                   </div>
                 </article>
               ))}
+            </div>
+
+            <div className="guided-publications">
+              <SectionIntro
+                code="A·02B"
+                label="MENTORING & COLLABORATION"
+                title={
+                  <>
+                    独立完成研究，
+                    <br />
+                    也推动<span>团队共同成长。</span>
+                  </>
+                }
+                text="在完成 6 篇本人核心论文的同时，指导低年级学生参与选题梳理、研究推进与论文写作，合作发表 4 篇论文，体现持续产出之外的协作与指导能力。"
+              />
+              <div className="guided-publication-list">
+                {studentGuidedPublications.map((paper) => (
+                  <article className="guided-publication-card reveal" key={paper.number}>
+                    <span>{paper.number}</span>
+                    <div>
+                      <p>{paper.venue}</p>
+                      <h3>{paper.title}</h3>
+                      <b>{paper.authors}</b>
+                    </div>
+                    <strong>{paper.role}</strong>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -1444,11 +1505,11 @@ function ProfilePageContent() {
 
         <section className="profile-proof-strip">
           {[
-            ["06", "篇核心论文", "均已见刊"],
+            ["06", "篇本人核心论文", "第一作者 / 导师一作本人二作"],
+            ["04", "篇指导合作论文", "低年级学生研究与写作指导"],
             ["04", "项课题申报", "国社科 / 省级 / 教改"],
             ["64", "项竞赛奖项", "国家级 20 + 国外省级 44"],
             ["03", "项专利申请", "设计与技术转化"],
-            ["03", "项企业落地", "从 PRD 到工程交付"],
           ].map(([number, label, note]) => (
             <div className="profile-proof reveal" key={label}>
               <b>{number}</b>
