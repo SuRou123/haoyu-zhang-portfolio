@@ -4993,3 +4993,86 @@ a:hover .arrow {
 .field-evidence-card figcaption {
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
 }
+
+.guided-publications {
+  margin-top: clamp(90px, 10vw, 150px);
+  padding-top: clamp(70px, 8vw, 110px);
+  border-top: 1px solid var(--line);
+}
+
+.guided-publication-list {
+  border-top: 1px solid var(--line);
+}
+
+.guided-publication-card {
+  min-height: 150px;
+  padding: 28px 0;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) minmax(150px, auto);
+  align-items: center;
+  gap: 26px;
+  border-bottom: 1px solid var(--line);
+  transition:
+    padding 280ms ease,
+    background 280ms ease;
+}
+
+.guided-publication-card:hover {
+  padding-inline: 20px;
+  background: rgba(16, 34, 58, 0.5);
+}
+
+.guided-publication-card > span {
+  color: var(--cyan);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.guided-publication-card div > p {
+  margin: 0 0 9px;
+  color: var(--blue-bright);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+.guided-publication-card h3 {
+  margin: 0;
+  color: #eef5ff;
+  font-size: clamp(18px, 1.8vw, 26px);
+  font-weight: 490;
+  line-height: 1.45;
+}
+
+.guided-publication-card div > b {
+  margin-top: 12px;
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 450;
+}
+
+.guided-publication-card > strong {
+  justify-self: end;
+  padding: 9px 12px;
+  border: 1px solid rgba(70, 216, 255, 0.28);
+  color: var(--cyan);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .guided-publication-card {
+    grid-template-columns: 44px 1fr;
+    gap: 18px;
+  }
+
+  .guided-publication-card > strong {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
