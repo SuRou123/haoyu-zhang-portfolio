@@ -488,7 +488,7 @@ const currentResearch = [
     title: "Emotion Sprite",
     subtitle: "Emotion Recognition & Intervention",
     text: "围绕线索学习、情绪归类与情境理解构建游戏化评估和纵向干预，探索更可参与的情绪学习路径。",
-    image: "/assets/research-agenda/emotion-sprite-study.webp",
+    image: "/assets/research-agenda/emotion-sprite-framework.webp",
     tags: ["Emotion", "Serious Game", "Children", "Evaluation"],
   },
 ];
