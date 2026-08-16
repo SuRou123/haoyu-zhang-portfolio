@@ -951,10 +951,10 @@ function AcademicPageContent() {
               <>
                 当前议程：
                 <br />
-                <span>儿童健康、孤独症与能动性。</span>
+                <span>面向 CHI 的儿童 HCI 研究。</span>
               </>
             }
-            text="下一阶段将围绕特殊儿童的非语言表达、感觉调节与社会互动，探索具身、可触、可共创的智能交互系统。"
+            text="下一阶段将围绕特殊儿童的非语言表达、感觉调节与社会互动，推进具身、可触、可共创的智能交互系统研究；以清晰的理论贡献、扎实的实证证据与可复现原型为标准，目标投稿人机交互顶级会议 ACM CHI。"
           />
           <div className="agenda-grid">
             {currentResearch.map((item, index) => (
@@ -983,10 +983,104 @@ function AcademicPageContent() {
           </div>
         </section>
 
+        <section
+          className="page-section page-frame knowledge-section"
+          id="academic-knowledge-graph"
+        >
+          <SectionIntro
+            code="A·02"
+            label="ACADEMIC KNOWLEDGE GRAPH"
+            title={
+              <>
+                个人学术知识图谱：
+                <br />
+                <span>从研究问题到可验证贡献。</span>
+              </>
+            }
+            text="图谱呈现我的研究对象、核心问题、交互范式、方法证据与实现能力如何共同汇聚为面向 CHI 的连续研究路径。"
+          />
+          <div
+            className="knowledge-map reveal"
+            aria-label="张浩宇个人学术知识图谱"
+          >
+            <svg
+              className="knowledge-links"
+              viewBox="0 0 1200 760"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path d="M600 380 L200 120" />
+              <path d="M600 380 L600 120" />
+              <path d="M600 380 L1000 120" />
+              <path d="M600 380 L200 380" />
+              <path d="M600 380 L1000 380" />
+              <path d="M600 380 L200 640" />
+              <path d="M600 380 L600 640" />
+              <path d="M600 380 L1000 640" />
+              <circle cx="600" cy="380" r="7" />
+            </svg>
+
+            <div className="knowledge-core">
+              <small>RESEARCHER / 研究者</small>
+              <strong>Haoyu Zhang</strong>
+              <span>HCI × DIGITAL HEALTH × INCLUSIVE DESIGN</span>
+            </div>
+
+            <article className="knowledge-node knowledge-node-domain">
+              <small>01 / DOMAIN</small>
+              <h3>研究对象</h3>
+              <p>儿童健康 · 孤独症 · 家庭照护 · 包容性设计</p>
+            </article>
+
+            <article className="knowledge-node knowledge-node-target">
+              <small>TARGET VENUE</small>
+              <h3>ACM CHI</h3>
+              <p>Human Factors in Computing Systems</p>
+              <b>THEORY × EVIDENCE × PROTOTYPE</b>
+            </article>
+
+            <article className="knowledge-node knowledge-node-question">
+              <small>02 / QUESTIONS</small>
+              <h3>核心问题</h3>
+              <p>能动性 · 情绪调节 · 健康训练 · 社会互动</p>
+            </article>
+
+            <article className="knowledge-node knowledge-node-interaction">
+              <small>03 / INTERACTION</small>
+              <h3>交互范式</h3>
+              <p>具身交互 · 实体交互 · 共创 · 自适应反馈</p>
+            </article>
+
+            <article className="knowledge-node knowledge-node-evidence">
+              <small>04 / EVIDENCE</small>
+              <h3>多模态证据</h3>
+              <p>EEG · Eye Tracking · EDA · HRV · RESP</p>
+            </article>
+
+            <article className="knowledge-node knowledge-node-methods">
+              <small>05 / METHODS</small>
+              <h3>研究方法</h3>
+              <p>混合方法 · 随机交叉实验 · 田野研究 · 行为编码</p>
+            </article>
+
+            <article className="knowledge-node knowledge-node-making">
+              <small>06 / MAKING</small>
+              <h3>原型实现</h3>
+              <p>React · Godot · TouchDesigner · Arduino</p>
+            </article>
+
+            <article className="knowledge-node knowledge-node-output">
+              <small>07 / OUTPUTS</small>
+              <h3>成果矩阵</h3>
+              <p>6 篇高质量论文 · 4 篇指导合作 · 3 项专利 · 4 项课题</p>
+            </article>
+          </div>
+        </section>
+
         <section className="page-section publications-section">
           <div className="page-frame">
             <SectionIntro
-              code="A·02"
+              code="A·03"
               label="PUBLICATIONS"
               title={
                 <>
@@ -1042,7 +1136,7 @@ function AcademicPageContent() {
 
             <div className="guided-publications">
               <SectionIntro
-                code="A·02B"
+                code="A·03B"
                 label="MENTORING & COLLABORATION"
                 title={
                   <>
@@ -1072,7 +1166,7 @@ function AcademicPageContent() {
 
         <section className="page-section page-frame methods-section">
           <SectionIntro
-            code="A·03"
+            code="A·04"
             label="RESEARCH METHODS"
             title={
               <>
@@ -1129,7 +1223,7 @@ function AcademicPageContent() {
         <section className="page-section contribution-section">
           <div className="page-frame">
             <SectionIntro
-              code="A·04"
+              code="A·05"
               label="RESEARCH POSITIONING"
               title={
                 <>
