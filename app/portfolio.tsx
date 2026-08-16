@@ -1001,78 +1001,118 @@ function AcademicPageContent() {
           />
           <div
             className="knowledge-map reveal"
-            aria-label="张浩宇个人学术知识图谱"
+            aria-label="张浩宇个人学术知识图谱：球形节点与研究关系网络"
           >
             <svg
-              className="knowledge-links"
-              viewBox="0 0 1200 760"
+              className="knowledge-links knowledge-links-desktop"
+              viewBox="0 0 1200 820"
               preserveAspectRatio="none"
               aria-hidden="true"
             >
-              <path d="M600 380 L200 120" />
-              <path d="M600 380 L600 120" />
-              <path d="M600 380 L1000 120" />
-              <path d="M600 380 L200 380" />
-              <path d="M600 380 L1000 380" />
-              <path d="M600 380 L200 640" />
-              <path d="M600 380 L600 640" />
-              <path d="M600 380 L1000 640" />
-              <circle cx="600" cy="380" r="7" />
+              <path d="M600 410 L192 139" />
+              <path d="M600 410 L600 107" />
+              <path d="M600 410 L1008 148" />
+              <path d="M600 410 L204 410" />
+              <path d="M600 410 L996 410" />
+              <path d="M600 410 L240 664" />
+              <path d="M600 410 L600 689" />
+              <path d="M600 410 L984 648" />
+              <g className="knowledge-points">
+                <circle cx="192" cy="139" r="4" />
+                <circle cx="600" cy="107" r="4" />
+                <circle cx="1008" cy="148" r="4" />
+                <circle cx="204" cy="410" r="4" />
+                <circle cx="996" cy="410" r="4" />
+                <circle cx="240" cy="664" r="4" />
+                <circle cx="600" cy="689" r="4" />
+                <circle cx="984" cy="648" r="4" />
+                <circle cx="600" cy="410" r="7" />
+              </g>
             </svg>
 
+            <svg
+              className="knowledge-links knowledge-links-mobile"
+              viewBox="0 0 360 1000"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path d="M180 370 L72 210" />
+              <path d="M180 370 L180 70" />
+              <path d="M180 370 L288 210" />
+              <path d="M180 370 L72 510" />
+              <path d="M180 370 L288 510" />
+              <path d="M180 370 L72 690" />
+              <path d="M180 370 L288 690" />
+              <path d="M180 370 L180 870" />
+              <g className="knowledge-points">
+                <circle cx="72" cy="210" r="4" />
+                <circle cx="180" cy="70" r="4" />
+                <circle cx="288" cy="210" r="4" />
+                <circle cx="72" cy="510" r="4" />
+                <circle cx="288" cy="510" r="4" />
+                <circle cx="72" cy="690" r="4" />
+                <circle cx="288" cy="690" r="4" />
+                <circle cx="180" cy="870" r="4" />
+                <circle cx="180" cy="370" r="7" />
+              </g>
+            </svg>
+
+            <span className="knowledge-orbit knowledge-orbit-a" aria-hidden="true" />
+            <span className="knowledge-orbit knowledge-orbit-b" aria-hidden="true" />
+            <span className="knowledge-orbit knowledge-orbit-c" aria-hidden="true" />
+
             <div className="knowledge-core">
-              <small>RESEARCHER / 研究者</small>
-              <strong>Haoyu Zhang</strong>
-              <span>HCI × DIGITAL HEALTH × INCLUSIVE DESIGN</span>
+              <small>RESEARCHER</small>
+              <strong>Haoyu<br />Zhang</strong>
+              <span>HCI × HEALTH × INCLUSION</span>
             </div>
 
             <article className="knowledge-node knowledge-node-domain">
               <small>01 / DOMAIN</small>
               <h3>研究对象</h3>
-              <p>儿童健康 · 孤独症 · 家庭照护 · 包容性设计</p>
+              <p>儿童健康<br />孤独症 · 家庭照护</p>
             </article>
 
             <article className="knowledge-node knowledge-node-target">
-              <small>TARGET VENUE</small>
+              <small>TARGET</small>
               <h3>ACM CHI</h3>
-              <p>Human Factors in Computing Systems</p>
-              <b>THEORY × EVIDENCE × PROTOTYPE</b>
+              <p>THEORY × EVIDENCE<br />× PROTOTYPE</p>
             </article>
 
             <article className="knowledge-node knowledge-node-question">
               <small>02 / QUESTIONS</small>
               <h3>核心问题</h3>
-              <p>能动性 · 情绪调节 · 健康训练 · 社会互动</p>
+              <p>能动性 · 情绪调节<br />健康训练</p>
             </article>
 
             <article className="knowledge-node knowledge-node-interaction">
               <small>03 / INTERACTION</small>
               <h3>交互范式</h3>
-              <p>具身交互 · 实体交互 · 共创 · 自适应反馈</p>
+              <p>具身 · 实体<br />共创 · 自适应</p>
             </article>
 
             <article className="knowledge-node knowledge-node-evidence">
               <small>04 / EVIDENCE</small>
               <h3>多模态证据</h3>
-              <p>EEG · Eye Tracking · EDA · HRV · RESP</p>
+              <p>EEG · EDA · HRV<br />EYE · RESP</p>
             </article>
 
             <article className="knowledge-node knowledge-node-methods">
               <small>05 / METHODS</small>
               <h3>研究方法</h3>
-              <p>混合方法 · 随机交叉实验 · 田野研究 · 行为编码</p>
+              <p>混合方法 · 随机交叉<br />田野研究</p>
             </article>
 
             <article className="knowledge-node knowledge-node-making">
               <small>06 / MAKING</small>
               <h3>原型实现</h3>
-              <p>React · Godot · TouchDesigner · Arduino</p>
+              <p>REACT · GODOT<br />ARDUINO · TD</p>
             </article>
 
             <article className="knowledge-node knowledge-node-output">
               <small>07 / OUTPUTS</small>
               <h3>成果矩阵</h3>
-              <p>6 篇高质量论文 · 4 篇指导合作 · 3 项专利 · 4 项课题</p>
+              <p>6+4 PAPERS · 3 PATENTS<br />4 PROPOSALS</p>
             </article>
           </div>
         </section>
