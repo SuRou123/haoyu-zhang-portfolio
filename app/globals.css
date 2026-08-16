@@ -1465,46 +1465,21 @@ a:hover .arrow {
   position: relative;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(105, 149, 214, 0.1);
-  background:
-    linear-gradient(rgba(76, 114, 168, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(76, 114, 168, 0.08) 1px, transparent 1px),
-    rgba(4, 10, 18, 0.5);
-  background-size: 28px 28px;
+  border: 1px solid rgba(105, 149, 214, 0.18);
+  background: #f4f7fb;
+  overflow: hidden;
 }
 
-.agenda-visual i {
-  position: absolute;
-  border: 1px solid rgba(66, 135, 250, 0.3);
-  border-radius: 50%;
-  animation: agenda-pulse 4s ease-in-out infinite;
+.agenda-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 500ms ease;
 }
 
-.agenda-visual i:nth-child(1) {
-  width: 140px;
-  height: 140px;
-}
-
-.agenda-visual i:nth-child(2) {
-  width: 96px;
-  height: 96px;
-  animation-delay: 0.5s;
-}
-
-.agenda-visual i:nth-child(3) {
-  width: 50px;
-  height: 50px;
-  border-color: rgba(70, 216, 255, 0.45);
-  animation-delay: 1s;
-}
-
-.agenda-visual span {
-  position: relative;
-  z-index: 2;
-  color: #eaf3ff;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 24px;
-  font-weight: 300;
+.agenda-card:hover .agenda-visual img {
+  transform: scale(1.015);
 }
 
 .agenda-card h3 {

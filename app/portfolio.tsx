@@ -472,6 +472,7 @@ const currentResearch = [
     title: "DrawnToLife",
     subtitle: "Fostering Agency in Autistic Children",
     text: "以 2D 绘画到 3D 增强现实创作为媒介，通过“意愿—表达—存在”三阶外化支架激发孤独症儿童能动性。",
+    image: "/assets/research-agenda/drawn-to-life.webp",
     tags: ["Autism", "Agency", "AR", "Creative HCI"],
   },
   {
@@ -479,6 +480,7 @@ const currentResearch = [
     title: "BubbleSeal",
     subtitle: "Tactile Seeking & Co-Regulation",
     text: "将儿童挤压行为转化为连续泡泡反馈，并以双人同步模式支持触觉寻求、模仿与成人—儿童共调节。",
+    image: "/assets/research-agenda/bubble-seal.webp",
     tags: ["Tangible", "Co-regulation", "ASD", "Sensing"],
   },
   {
@@ -486,6 +488,7 @@ const currentResearch = [
     title: "Emotion Sprite",
     subtitle: "Emotion Recognition & Intervention",
     text: "围绕线索学习、情绪归类与情境理解构建游戏化评估和纵向干预，探索更可参与的情绪学习路径。",
+    image: "/assets/research-agenda/emotion-sprite-study.webp",
     tags: ["Emotion", "Serious Game", "Children", "Evaluation"],
   },
 ];
@@ -965,10 +968,7 @@ function AcademicPageContent() {
                   <small>WORK IN PROGRESS</small>
                 </div>
                 <div className="agenda-visual">
-                  <i />
-                  <i />
-                  <i />
-                  <span>{index + 1}</span>
+                  <img src={item.image} alt={`${item.title} 研究图示`} />
                 </div>
                 <h3>{item.title}</h3>
                 <h4>{item.subtitle}</h4>
