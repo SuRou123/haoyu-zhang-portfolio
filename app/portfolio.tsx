@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import ParticleDrift from "@/components/ui/particle-drift";
 
 type PageKind = "home" | "academic" | "design" | "profile";
 
@@ -274,7 +275,7 @@ const publications = [
     key: "BreatheBuddy",
     title:
       "Gamified Feedback-Based Training System for Pediatric Asthma Inhaler Use: Mixed Methods Randomized Crossover Study",
-    venue: "JMIR Serious Games · 2026 · JCR Q1 · 中科院大类2区 / 小类1区",
+    venue: "JMIR Serious Games · 2026 · Q1",
     role: "FIRST AUTHOR",
     authors: "Haoyu Zhang, Xiaoying Li",
     method: "n = 20 · Repeated-measures · RESP + PENS / GUESS / SUS",
@@ -291,7 +292,7 @@ const publications = [
     key: "Digital Prayer Beads",
     title:
       "Digital Prayer Beads: Adaptive Kinesthetic Mindfulness Device for Emotion Regulation and Stress Relief",
-    venue: "International Journal of Human–Computer Interaction · 2026 · JCR Q1 · 中科院大类2区 TOP",
+    venue: "International Journal of Human–Computer Interaction · 2026 · Q1",
     role: "FIRST AUTHOR",
     authors: "Haoyu Zhang, Xiaoying Li",
     method: "n = 30 · Three conditions · STAI-S + EDA + HRV",
@@ -308,7 +309,7 @@ const publications = [
     key: "METUX Visual Training",
     title:
       "A Three-Stage Visual Training Evaluation Based on the METUX Model: Motivation, Engagement, and Well-Being",
-    venue: "International Journal of Human–Computer Interaction · 2026 · JCR Q1 · 中科院大类2区 TOP · CCF-B",
+    venue: "International Journal of Human–Computer Interaction · 2026 · Q1",
     role: "SECOND AUTHOR",
     authors: "Xiaoying Li, Haoyu Zhang, Guangran Li",
     method: "n = 20 · Eye tracking + EDA · Three-stage evaluation",
@@ -325,7 +326,7 @@ const publications = [
     key: "HopeLumina",
     title:
       "A Family Emotional Support System for MCS Patients Based on an EEG-to-Visual Translation Mechanism",
-    venue: "Applied Sciences · 2025 · JCR Q1 · 中科院大类3区",
+    venue: "Applied Sciences · 2025",
     role: "FIRST AUTHOR",
     authors: "Haoyu Zhang, Xiaoying Li",
     method: "EEG-to-visual mapping · TouchDesigner · User evaluation",
@@ -342,7 +343,7 @@ const publications = [
     key: "BioFit KG",
     title:
       "Biodata-Driven Knowledge Graph Recommendation System: Fusing Foot and Leg Characteristics for Personalised Shoe Recommendation",
-    venue: "Applied Sciences · 2025 · JCR Q1 · 中科院大类3区",
+    venue: "Applied Sciences · 2025",
     role: "FIRST AUTHOR",
     authors: "Haoyu Zhang, Xiaoying Li",
     method: "Plantar pressure + Depth camera · Knowledge graph",
@@ -358,7 +359,7 @@ const publications = [
     number: "06",
     key: "Parametric Helmet",
     title: "头部数字化和规则驱动的头盔参数化设计",
-    venue: "机械设计 · 2025 · 北大核心 · CSCD",
+    venue: "机械设计 · 2025 · CSCD",
     role: "SECOND AUTHOR",
     authors: "李晓英, 张浩宇, 尹昊",
     method: "SFM / MVS · Grasshopper · Jack ergonomics simulation",
@@ -369,37 +370,6 @@ const publications = [
     doiCode: "10.13841/j.cnki.jxsj.2025.12.039",
     pdf: "/downloads/parametric-helmet.pdf",
     accent: "blue",
-  },
-];
-
-const studentGuidedPublications = [
-  {
-    number: "07",
-    title: "老年人主动健康体检行为引导设计策略研究",
-    venue: "包装工程 · 北大核心",
-    authors: "李晓英, 邵凤临, 张浩宇 等",
-    role: "学生指导与合作发表",
-  },
-  {
-    number: "08",
-    title: "连接家庭与社区的“共享祖孙”公共健身设施设计研究",
-    venue: "包装工程 · 北大核心",
-    authors: "李晓英, 闫鼎颐, 张浩宇 等",
-    role: "学生指导与合作发表",
-  },
-  {
-    number: "09",
-    title: "基于具身认知的学龄前儿童食育服务系统设计研究",
-    venue: "工业设计 · SCD",
-    authors: "李晓英, 尹昊, 张浩宇",
-    role: "学生指导与合作发表",
-  },
-  {
-    number: "10",
-    title: "面向儿童家庭教育的父亲情绪外化与视觉转译设计研究",
-    venue: "设计 · SCD",
-    authors: "李晓英, 姚卓君, 张浩宇",
-    role: "学生指导与合作发表",
   },
 ];
 
@@ -472,24 +442,27 @@ const currentResearch = [
     title: "DrawnToLife",
     subtitle: "Fostering Agency in Autistic Children",
     text: "以 2D 绘画到 3D 增强现实创作为媒介，通过“意愿—表达—存在”三阶外化支架激发孤独症儿童能动性。",
-    image: "/assets/research-agenda/drawn-to-life.webp",
     tags: ["Autism", "Agency", "AR", "Creative HCI"],
+    image: "/assets/current-research/drawn-to-life.webp",
+    imageAlt: "DrawnToLife 从偏好选择、涂色创作到 2D 转 3D 增强现实互动的三阶段流程",
   },
   {
     code: "R·02",
     title: "BubbleSeal",
     subtitle: "Tactile Seeking & Co-Regulation",
     text: "将儿童挤压行为转化为连续泡泡反馈，并以双人同步模式支持触觉寻求、模仿与成人—儿童共调节。",
-    image: "/assets/research-agenda/bubble-seal.webp",
     tags: ["Tangible", "Co-regulation", "ASD", "Sensing"],
+    image: "/assets/current-research/bubble-seal.webp",
+    imageAlt: "BubbleSeal 单人挤压反馈与双人同步共调节交互流程",
   },
   {
     code: "R·03",
     title: "Emotion Sprite",
     subtitle: "Emotion Recognition & Intervention",
     text: "围绕线索学习、情绪归类与情境理解构建游戏化评估和纵向干预，探索更可参与的情绪学习路径。",
-    image: "/assets/research-agenda/emotion-sprite-framework.webp",
     tags: ["Emotion", "Serious Game", "Children", "Evaluation"],
+    image: "/assets/current-research/emotion-sprite.webp",
+    imageAlt: "Emotion Sprite 从专家共创、家长调研、试点研究到系统实验的发展路径",
   },
 ];
 
@@ -610,42 +583,240 @@ function SectionIntro({
   );
 }
 
-function HeroOrbit() {
+const researchFocuses = [
+  {
+    id: "hci-health",
+    index: "01",
+    eyebrow: "CORE RESEARCH",
+    title: "HCI × HEALTH",
+    cn: "健康人机交互",
+    summary: "以人的体验、行为与健康结果为核心，将交互设计转化为可以被实验验证的数字健康系统。",
+    detail:
+      "围绕儿童哮喘吸入训练、视觉训练与数字念珠等研究，将游戏化反馈、交互机制与健康行为结合，并通过用户体验、行为表现和生理数据验证设计价值。",
+    evidence: "Pediatric health · Serious games · Behavioral change",
+  },
+  {
+    id: "embodied",
+    index: "02",
+    eyebrow: "RESEARCH DIRECTION",
+    title: "EMBODIED",
+    cn: "具身交互",
+    summary: "关注身体动作、触觉反馈、空间关系与智能体行为如何共同塑造人的参与和社会互动。",
+    detail:
+      "通过 BubbleSeal 触觉共调节、2D 到 3D 增强现实创作和机器人社交中介研究，探索挤压、模仿、等待、转交与退场等具身线索如何支持儿童能动性及同伴互动。",
+    evidence: "Tangible interaction · AR · Human–robot interaction",
+  },
+  {
+    id: "inclusive",
+    index: "03",
+    eyebrow: "DESIGN COMMITMENT",
+    title: "INCLUSIVE",
+    cn: "包容性设计",
+    summary: "面向孤独症儿童、慢病儿童、老年人与行动障碍人群，在真实场域中设计可参与的技术。",
+    detail:
+      "研究不把差异视为需要被消除的问题，而是从儿童偏好、感官需求、拒绝权与照护关系出发，与教师、家长和康复人员共同建立更低负担、更有尊严的交互方式。",
+    evidence: "Autism · Children · Ageing · Accessibility",
+  },
+  {
+    id: "evaluation",
+    index: "04",
+    eyebrow: "RESEARCH CAPABILITY",
+    title: "MULTIMODAL",
+    cn: "多模态评估",
+    summary: "把行为观察、主观体验与生理信号放进同一套研究框架，形成可复核的设计证据。",
+    detail:
+      "能够结合被试内实验、行为编码、访谈和量表，并使用 EEG、眼动、EDA、HRV、RESP、EMG 与 PPG 等工具，从表现、体验和生理反应三个层面评估交互系统。",
+    evidence: "Behavior · UX scales · Physiology · Statistics",
+  },
+  {
+    id: "prototyping",
+    index: "05",
+    eyebrow: "MAKING CAPABILITY",
+    title: "PROTOTYPING",
+    cn: "软硬件原型",
+    summary: "从研究命题到可运行系统，独立贯通交互逻辑、传感器、视觉反馈与实验部署。",
+    detail:
+      "使用 Arduino、Godot、TouchDesigner、React、TypeScript 与 Three.js 等工具完成研究原型，连接压力、呼吸和多种生理传感器，并将概念推进为可以在学校、康复机构和实验室中测试的系统。",
+    evidence: "Arduino · Godot · TouchDesigner · React",
+  },
+] as const;
+
+type ResearchFocus = (typeof researchFocuses)[number];
+type ResearchFocusId = ResearchFocus["id"];
+type DragOffset = { x: number; y: number };
+
+function HeroPortrait() {
+  const [activeFocus, setActiveFocus] = useState<ResearchFocus | null>(null);
+  const [cardOffsets, setCardOffsets] = useState<Partial<Record<ResearchFocusId, DragOffset>>>({});
+  const [draggingId, setDraggingId] = useState<ResearchFocusId | null>(null);
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  const dragRef = useRef<{
+    id: ResearchFocusId;
+    pointerId: number;
+    startX: number;
+    startY: number;
+    originX: number;
+    originY: number;
+    minX: number;
+    maxX: number;
+    minY: number;
+    maxY: number;
+    moved: boolean;
+  } | null>(null);
+  const suppressClickRef = useRef<ResearchFocusId | null>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (activeFocus && !dialog.open) dialog.showModal();
+    if (!activeFocus && dialog.open) dialog.close();
+  }, [activeFocus]);
+
+  const startCardDrag = (
+    id: ResearchFocusId,
+    event: React.PointerEvent<HTMLButtonElement>,
+  ) => {
+    if (event.button !== 0 || !panelRef.current) return;
+
+    const card = event.currentTarget;
+    const offset = cardOffsets[id] ?? { x: 0, y: 0 };
+    const cardRect = card.getBoundingClientRect();
+    const panelRect = panelRef.current.getBoundingClientRect();
+    const baseLeft = cardRect.left - offset.x;
+    const baseTop = cardRect.top - offset.y;
+    const safeInset = 10;
+
+    dragRef.current = {
+      id,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      originX: offset.x,
+      originY: offset.y,
+      minX: panelRect.left + safeInset - baseLeft,
+      maxX: panelRect.right - safeInset - cardRect.width - baseLeft,
+      minY: panelRect.top + safeInset - baseTop,
+      maxY: panelRect.bottom - safeInset - cardRect.height - baseTop,
+      moved: false,
+    };
+    suppressClickRef.current = null;
+    card.setPointerCapture(event.pointerId);
+    setDraggingId(id);
+  };
+
+  const moveCard = (event: React.PointerEvent<HTMLButtonElement>) => {
+    const drag = dragRef.current;
+    if (!drag || drag.pointerId !== event.pointerId) return;
+
+    const deltaX = event.clientX - drag.startX;
+    const deltaY = event.clientY - drag.startY;
+    if (!drag.moved && Math.hypot(deltaX, deltaY) > 5) drag.moved = true;
+    if (!drag.moved) return;
+
+    event.preventDefault();
+    const nextX = Math.min(drag.maxX, Math.max(drag.minX, drag.originX + deltaX));
+    const nextY = Math.min(drag.maxY, Math.max(drag.minY, drag.originY + deltaY));
+    setCardOffsets((current) => ({ ...current, [drag.id]: { x: nextX, y: nextY } }));
+  };
+
+  const endCardDrag = (event: React.PointerEvent<HTMLButtonElement>) => {
+    const drag = dragRef.current;
+    if (!drag || drag.pointerId !== event.pointerId) return;
+
+    if (drag.moved) {
+      suppressClickRef.current = drag.id;
+      window.setTimeout(() => {
+        if (suppressClickRef.current === drag.id) suppressClickRef.current = null;
+      }, 0);
+    }
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+    dragRef.current = null;
+    setDraggingId(null);
+  };
+
   return (
-    <div className="orbit-stage reveal" role="img" aria-label="张浩宇研究方向图谱">
-      <div className="orbit-grid" />
-      <div className="orbit-ring orbit-ring-a" />
-      <div className="orbit-ring orbit-ring-b" />
-      <div className="orbit-ring orbit-ring-c" />
-      <div className="portrait-shell">
+    <div className="hero-portrait-panel reveal" ref={panelRef}>
+      <span className="hero-corner hero-corner-tl" />
+      <span className="hero-corner hero-corner-tr" />
+      <span className="hero-corner hero-corner-bl" />
+      <span className="hero-corner hero-corner-br" />
+      <div className="hero-portrait-glow" />
+      <div className="research-focus-cloud" aria-label="个人研究方向与能力">
+        {researchFocuses.map((focus) => (
+          <button
+            className={`research-focus-card focus-${focus.id}${draggingId === focus.id ? " is-dragging" : ""}`}
+            key={focus.id}
+            type="button"
+            style={{
+              transform: `translate3d(${cardOffsets[focus.id]?.x ?? 0}px, ${cardOffsets[focus.id]?.y ?? 0}px, 0)`,
+            }}
+            onPointerDown={(event) => startCardDrag(focus.id, event)}
+            onPointerMove={moveCard}
+            onPointerUp={endCardDrag}
+            onPointerCancel={endCardDrag}
+            onClick={(event) => {
+              if (suppressClickRef.current === focus.id) {
+                event.preventDefault();
+                return;
+              }
+              setActiveFocus(focus);
+            }}
+            aria-label={`查看${focus.cn}研究说明`}
+          >
+            <span className="research-focus-head">
+              <i />
+              <small>{focus.eyebrow}</small>
+              <b>{focus.index}</b>
+            </span>
+            <strong>{focus.title}</strong>
+            <span className="research-focus-cn">{focus.cn}</span>
+            <em>点击查看 · 拖动调整</em>
+          </button>
+        ))}
+      </div>
+      <div className="hero-portrait-image">
         <img
-          src="/assets/profile/haoyu-lifestyle-cutout.png?v=20260726-beautified"
-          alt="张浩宇人物形象"
-          width="917"
-          height="1716"
+          src="/assets/profile/haoyu-hero-portrait-v2.png"
+          alt="张浩宇，HCI研究者与设计实践者"
+          width="1024"
+          height="1536"
         />
       </div>
-      <div className="orbit-node node-a">
-        <i />
-        <span>HCI</span>
-      </div>
-      <div className="orbit-node node-b">
-        <i />
-        <span>DIGITAL HEALTH</span>
-      </div>
-      <div className="orbit-node node-c">
-        <i />
-        <span>EMBODIED INTERACTION</span>
-      </div>
-      <div className="orbit-node node-d">
-        <i />
-        <span>INCLUSIVE DESIGN</span>
-      </div>
-      <div className="orbit-readout">
-        <span>RESEARCHER</span>
-        <b>04</b>
-        <span>MAKER</span>
-      </div>
+      <dialog
+        className="research-focus-dialog"
+        ref={dialogRef}
+        aria-labelledby="research-focus-title"
+        onClose={() => setActiveFocus(null)}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) setActiveFocus(null);
+        }}
+      >
+        {activeFocus && (
+          <div className="research-focus-dialog-card">
+            <button
+              className="research-dialog-close"
+              type="button"
+              aria-label="关闭研究方向说明"
+              onClick={() => setActiveFocus(null)}
+            >
+              ×
+            </button>
+            <div className="research-dialog-kicker">
+              <span>{activeFocus.index}</span>
+              <i />
+              <small>{activeFocus.eyebrow}</small>
+            </div>
+            <h2 id="research-focus-title">{activeFocus.title}</h2>
+            <h3>{activeFocus.cn}</h3>
+            <p className="research-dialog-summary">{activeFocus.summary}</p>
+            <p className="research-dialog-detail">{activeFocus.detail}</p>
+            <div className="research-dialog-evidence">{activeFocus.evidence}</div>
+          </div>
+        )}
+      </dialog>
     </div>
   );
 }
@@ -682,10 +853,18 @@ function HomePage() {
     <>
       <main id="top">
         <section className="home-hero page-frame">
+          <ParticleDrift
+            className="hero-particle-drift"
+            speed={0.72}
+            density={0.86}
+            length={1.12}
+            opacity={0.72}
+            brightness={0.84}
+          />
           <div className="hero-copy">
             <p className="eyebrow reveal">HAOYU ZHANG · PORTFOLIO 2026</p>
             <h1 className="reveal">
-              以设计理解人，
+              <span className="hero-line-solid">以设计理解人，</span>
               <br />
               以研究
               <br />
@@ -704,13 +883,8 @@ function HomePage() {
                 查看设计实践 <span>→</span>
               </Link>
             </div>
-            <div className="hero-meta reveal">
-              <span>01 / CHILD HEALTH</span>
-              <span>02 / NEURODIVERSITY</span>
-              <span>03 / EMBODIED SYSTEMS</span>
-            </div>
           </div>
-          <HeroOrbit />
+          <HeroPortrait />
           <div className="scroll-cue">
             <span>SCROLL TO EXPLORE</span>
             <Arrow down />
@@ -908,11 +1082,8 @@ function AcademicPageContent() {
               <span>that can be tested.</span>
             </h1>
             <p className="reveal">
-              研究聚焦于数字健康、具身交互与包容性 HCI。以第一作者或导师一作、本人二作
-              发表论文 6 篇（均已见刊），其中中科院一区、二区论文共 3 篇，中科院三区论文
-              2 篇，CSCD 论文 1 篇；另有 2 篇投稿 CHI 2027，1 篇在投 IJHCS。同时指导
-              低年级学生参与研究与论文写作，合作发表论文 4 篇。另以学生核心撰写身份参与
-              国家社科基金、省部级社科及教学改革类课题申报 4 项，并申请专利 3 项。
+              研究聚焦于数字健康、具身交互与包容性 HCI：以人本问题定义技术，
+              以工作原型承载机制，以混合方法与多模态数据验证真实影响。
             </p>
           </div>
           <div className="academic-signal reveal">
@@ -931,10 +1102,10 @@ function AcademicPageContent() {
 
         <section className="academic-stats">
           {[
-            ["06", "CORE PUBLICATIONS", "本人高质量论文 · 均已见刊"],
-            ["05", "JCR Q1 JOURNAL WORKS", "JCR Q1 期刊论文"],
-            ["04", "MENTORED PUBLICATIONS", "指导低年级学生合作发表"],
-            ["04", "PROJECT PROPOSALS", "国社科 / 省部级 / 教改"],
+            ["06", "PUBLISHED / ACCEPTED", "已发表及录用论文"],
+            ["06", "FIRST / CORRESPONDING AUTHOR", "第一作者 / 通讯作者论文"],
+            ["03", "Q1 JOURNAL WORKS", "Q1 期刊成果"],
+            ["05+", "EMPIRICAL SYSTEMS", "实证型交互系统"],
           ].map(([value, en, cn]) => (
             <div className="academic-stat reveal" key={en}>
               <b>{value}</b>
@@ -952,10 +1123,10 @@ function AcademicPageContent() {
               <>
                 当前议程：
                 <br />
-                <span>面向 CHI 的儿童 HCI 研究。</span>
+                <span>儿童健康、孤独症与能动性。</span>
               </>
             }
-            text="下一阶段将围绕特殊儿童的非语言表达、感觉调节与社会互动，推进具身、可触、可共创的智能交互系统研究；以清晰的理论贡献、扎实的实证证据与可复现原型为标准，目标投稿人机交互顶级会议 ACM CHI。"
+            text="下一阶段将围绕特殊儿童的非语言表达、感觉调节与社会互动，探索具身、可触、可共创的智能交互系统。"
           />
           <div className="agenda-grid">
             {currentResearch.map((item, index) => (
@@ -969,7 +1140,15 @@ function AcademicPageContent() {
                   <small>WORK IN PROGRESS</small>
                 </div>
                 <div className="agenda-visual">
-                  <img src={item.image} alt={`${item.title} 研究图示`} />
+                  <img
+                    src={item.image}
+                    alt={item.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span className="agenda-image-index" aria-hidden="true">
+                    0{index + 1}
+                  </span>
                 </div>
                 <h3>{item.title}</h3>
                 <h4>{item.subtitle}</h4>
@@ -984,144 +1163,10 @@ function AcademicPageContent() {
           </div>
         </section>
 
-        <section
-          className="page-section page-frame knowledge-section"
-          id="academic-knowledge-graph"
-        >
-          <SectionIntro
-            code="A·02"
-            label="ACADEMIC KNOWLEDGE GRAPH"
-            title={
-              <>
-                个人学术知识图谱：
-                <br />
-                <span>从研究问题到可验证贡献。</span>
-              </>
-            }
-            text="图谱呈现我的研究对象、核心问题、交互范式、方法证据与实现能力如何共同汇聚为面向 CHI 的连续研究路径。"
-          />
-          <div
-            className="knowledge-map reveal"
-            aria-label="张浩宇个人学术知识图谱：球形节点与研究关系网络"
-          >
-            <svg
-              className="knowledge-links knowledge-links-desktop"
-              viewBox="0 0 1200 820"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <path d="M600 410 L192 139" />
-              <path d="M600 410 L600 107" />
-              <path d="M600 410 L1008 148" />
-              <path d="M600 410 L204 410" />
-              <path d="M600 410 L996 410" />
-              <path d="M600 410 L240 664" />
-              <path d="M600 410 L600 689" />
-              <path d="M600 410 L984 648" />
-              <g className="knowledge-points">
-                <circle cx="192" cy="139" r="4" />
-                <circle cx="600" cy="107" r="4" />
-                <circle cx="1008" cy="148" r="4" />
-                <circle cx="204" cy="410" r="4" />
-                <circle cx="996" cy="410" r="4" />
-                <circle cx="240" cy="664" r="4" />
-                <circle cx="600" cy="689" r="4" />
-                <circle cx="984" cy="648" r="4" />
-                <circle cx="600" cy="410" r="7" />
-              </g>
-            </svg>
-
-            <svg
-              className="knowledge-links knowledge-links-mobile"
-              viewBox="0 0 360 1000"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <path d="M180 370 L72 210" />
-              <path d="M180 370 L180 70" />
-              <path d="M180 370 L288 210" />
-              <path d="M180 370 L72 510" />
-              <path d="M180 370 L288 510" />
-              <path d="M180 370 L72 690" />
-              <path d="M180 370 L288 690" />
-              <path d="M180 370 L180 870" />
-              <g className="knowledge-points">
-                <circle cx="72" cy="210" r="4" />
-                <circle cx="180" cy="70" r="4" />
-                <circle cx="288" cy="210" r="4" />
-                <circle cx="72" cy="510" r="4" />
-                <circle cx="288" cy="510" r="4" />
-                <circle cx="72" cy="690" r="4" />
-                <circle cx="288" cy="690" r="4" />
-                <circle cx="180" cy="870" r="4" />
-                <circle cx="180" cy="370" r="7" />
-              </g>
-            </svg>
-
-            <span className="knowledge-orbit knowledge-orbit-a" aria-hidden="true" />
-            <span className="knowledge-orbit knowledge-orbit-b" aria-hidden="true" />
-            <span className="knowledge-orbit knowledge-orbit-c" aria-hidden="true" />
-
-            <div className="knowledge-core">
-              <small>RESEARCHER</small>
-              <strong>Haoyu<br />Zhang</strong>
-              <span>HCI × HEALTH × INCLUSION</span>
-            </div>
-
-            <article className="knowledge-node knowledge-node-domain">
-              <small>01 / DOMAIN</small>
-              <h3>研究对象</h3>
-              <p>儿童健康<br />孤独症 · 家庭照护</p>
-            </article>
-
-            <article className="knowledge-node knowledge-node-target">
-              <small>TARGET</small>
-              <h3>ACM CHI</h3>
-              <p>THEORY × EVIDENCE<br />× PROTOTYPE</p>
-            </article>
-
-            <article className="knowledge-node knowledge-node-question">
-              <small>02 / QUESTIONS</small>
-              <h3>核心问题</h3>
-              <p>能动性 · 情绪调节<br />健康训练</p>
-            </article>
-
-            <article className="knowledge-node knowledge-node-interaction">
-              <small>03 / INTERACTION</small>
-              <h3>交互范式</h3>
-              <p>具身 · 实体<br />共创 · 自适应</p>
-            </article>
-
-            <article className="knowledge-node knowledge-node-evidence">
-              <small>04 / EVIDENCE</small>
-              <h3>多模态证据</h3>
-              <p>EEG · EDA · HRV<br />EYE · RESP</p>
-            </article>
-
-            <article className="knowledge-node knowledge-node-methods">
-              <small>05 / METHODS</small>
-              <h3>研究方法</h3>
-              <p>混合方法 · 随机交叉<br />田野研究</p>
-            </article>
-
-            <article className="knowledge-node knowledge-node-making">
-              <small>06 / MAKING</small>
-              <h3>原型实现</h3>
-              <p>REACT · GODOT<br />ARDUINO · TD</p>
-            </article>
-
-            <article className="knowledge-node knowledge-node-output">
-              <small>07 / OUTPUTS</small>
-              <h3>成果矩阵</h3>
-              <p>6+4 PAPERS · 3 PATENTS<br />4 PROPOSALS</p>
-            </article>
-          </div>
-        </section>
-
         <section className="page-section publications-section">
           <div className="page-frame">
             <SectionIntro
-              code="A·03"
+              code="A·02"
               label="PUBLICATIONS"
               title={
                 <>
@@ -1174,40 +1219,12 @@ function AcademicPageContent() {
                 </article>
               ))}
             </div>
-
-            <div className="guided-publications">
-              <SectionIntro
-                code="A·03B"
-                label="MENTORING & COLLABORATION"
-                title={
-                  <>
-                    独立完成研究，
-                    <br />
-                    也推动<span>团队共同成长。</span>
-                  </>
-                }
-                text="在完成 6 篇本人核心论文的同时，指导低年级学生参与选题梳理、研究推进与论文写作，合作发表 4 篇论文，体现持续产出之外的协作与指导能力。"
-              />
-              <div className="guided-publication-list">
-                {studentGuidedPublications.map((paper) => (
-                  <article className="guided-publication-card reveal" key={paper.number}>
-                    <span>{paper.number}</span>
-                    <div>
-                      <p>{paper.venue}</p>
-                      <h3>{paper.title}</h3>
-                      <b>{paper.authors}</b>
-                    </div>
-                    <strong>{paper.role}</strong>
-                  </article>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
         <section className="page-section page-frame methods-section">
           <SectionIntro
-            code="A·04"
+            code="A·03"
             label="RESEARCH METHODS"
             title={
               <>
@@ -1264,7 +1281,7 @@ function AcademicPageContent() {
         <section className="page-section contribution-section">
           <div className="page-frame">
             <SectionIntro
-              code="A·05"
+              code="A·04"
               label="RESEARCH POSITIONING"
               title={
                 <>
@@ -1640,11 +1657,11 @@ function ProfilePageContent() {
 
         <section className="profile-proof-strip">
           {[
-            ["06", "篇本人核心论文", "第一作者 / 导师一作本人二作"],
-            ["04", "篇指导合作论文", "低年级学生研究与写作指导"],
+            ["06", "篇核心论文", "均已见刊"],
             ["04", "项课题申报", "国社科 / 省级 / 教改"],
             ["64", "项竞赛奖项", "国家级 20 + 国外省级 44"],
             ["03", "项专利申请", "设计与技术转化"],
+            ["03", "项企业落地", "从 PRD 到工程交付"],
           ].map(([number, label, note]) => (
             <div className="profile-proof reveal" key={label}>
               <b>{number}</b>
